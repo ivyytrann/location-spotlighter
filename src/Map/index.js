@@ -19,7 +19,7 @@ const locations = [
   { Title: "test", geolocation: { lat: -34.9341, lng: 117.3611 } },
 ]
 
-export default function App() {
+export default function GeoMap() {
   const [popupInfo, setPopupInfo] = useState(null)
 
   const pins = useMemo(
