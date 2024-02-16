@@ -11,24 +11,25 @@ import { Box } from '@mui/material';
 export default function DrawerCard({location} )  {
     console.log(location)
   return (
-    <Box pb={2}>
+    <Box pt={2} pb={2}>
         <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
+        <iframe width="320" height="180" src={location.youtube_url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        {/* <CardMedia
             sx={{ height: 140 }}
             image="{locations.Title}"
             title="location"
-        />
+        /> */}
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-                {location.Title}
+                {location.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-                {location.Description}
+                {location.description}
             </Typography>
         </CardContent>
-        <CardActions>
+        {/* <CardActions>
             <Button size="small">Learn More</Button>
-        </CardActions>
+        </CardActions> */}
         </Card>
     </Box>
   );
