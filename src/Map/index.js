@@ -15,9 +15,7 @@ import { Typography } from "@mui/material"
 // on vercel you can set these in the environment variables
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN
 
-
-export default function GeoMap({popupInfo, setPopupInfo, videos}) {
-
+export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
   const pins = useMemo(
     () =>
       videos.map((location, index) => (
@@ -53,7 +51,7 @@ export default function GeoMap({popupInfo, setPopupInfo, videos}) {
           bearing: 0,
           pitch: 0,
         }}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
+        mapStyle="mapbox://styles/mapbox/satellite-v9"
         mapboxAccessToken={TOKEN}
       >
         <GeolocateControl position="top-left" />
