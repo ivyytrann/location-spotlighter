@@ -5,12 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import locations from './locations.json'
 import { Box } from '@mui/material';
-import { LocationSearching } from '@mui/icons-material';
 
 
 export default function DrawerCard({location} )  {
+    console.log(location)
   return (
     <Box pb={2}>
         <Card sx={{ maxWidth: 345 }}>
@@ -21,10 +20,10 @@ export default function DrawerCard({location} )  {
         />
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-                {location.title}
+                {location.Title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-                {location.description}
+                {location.Description}
             </Typography>
         </CardContent>
         <CardActions>
