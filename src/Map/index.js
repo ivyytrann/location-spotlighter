@@ -8,23 +8,19 @@ import Map, {
   ScaleControl,
   GeolocateControl,
 } from "react-map-gl"
-
 import Pin from "./pin"
+import { Typography } from "@mui/material"
 
 // locally you can set this in the .env file, which is ignored by git (so you can keep your secrets secret)
 // on vercel you can set these in the environment variables
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN
 
-const locations = [
-  { Title: "test", geolocation: { lat: -34.9341, lng: 117.3611 } },
-]
 
-export default function GeoMap() {
-  const [popupInfo, setPopupInfo] = useState(null)
+export default function GeoMap({popupInfo, setPopupInfo, videos}) {
 
   const pins = useMemo(
     () =>
-      locations.map((location, index) => (
+      videos.map((location, index) => (
         <Marker
           key={`marker-${index}`}
           longitude={location.geolocation.lng}
@@ -53,7 +49,7 @@ export default function GeoMap() {
         initialViewState={{
           latitude: -34.9341,
           longitude: 117.3611,
-          zoom: 3.5,
+          zoom: 10,
           bearing: 0,
           pitch: 0,
         }}
@@ -74,7 +70,8 @@ export default function GeoMap() {
             latitude={Number(popupInfo.geolocation.lat)}
             onClose={() => setPopupInfo(null)}
           >
-            <div>{popupInfo.Title}</div>
+            <Typography variant="h6">{popupInfo.name}</Typography>
+            <Typography variant="body">{popupInfo.description}</Typography>
           </Popup>
         )}
       </Map>

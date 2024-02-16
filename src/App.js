@@ -6,17 +6,19 @@ import videos from './videos.json'
 import DrawerCard from './DrawerCard';
 import { useRef } from 'react';
 import GeoMap from './Map';
+import { useState } from 'react';
 
 
 
 const drawerWidth = 400;
 
 export default function LocationDrawer() {
+  const [popupInfo, setPopupInfo] = useState(null)
 
   return (
       <>
       <div style={{height:"100vh"}}>
-        <GeoMap/>
+        <GeoMap popupInfo={popupInfo} setPopupInfo={setPopupInfo} videos={videos}/>
       </div>
       <Drawer
         sx={{
