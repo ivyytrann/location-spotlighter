@@ -44,6 +44,7 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
         rel="stylesheet"
       />
       <Map
+        id="denmarkMap"
         initialViewState={{
           latitude: -34.9341,
           longitude: 117.3611,
