@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useState, useMemo } from "react"
+import { useMemo } from "react"
 import Map, {
   Marker,
   Popup,
