@@ -2,8 +2,8 @@ import * as React from "react"
 import Drawer from "@mui/material/Drawer"
 import Toolbar from "@mui/material/Toolbar"
 import videos from "./videos.json"
-import DrawerCard from "./DrawerCard"
-import GeoMap from "./Map"
+import DrawerCard from "./Components/DrawerCard"
+import GeoMap from "./Components/Map"
 import { useState } from "react"
 import { MapProvider } from "react-map-gl"
 
@@ -11,8 +11,6 @@ const drawerWidth = 400
 
 export default function LocationDrawer() {
   const [popupInfo, setPopupInfo] = useState(null)
-
-  
 
   return (
     <MapProvider>

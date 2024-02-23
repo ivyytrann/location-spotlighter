@@ -8,7 +8,7 @@ import Map, {
   ScaleControl,
   GeolocateControl,
 } from "react-map-gl"
-import Pin from "./pin"
+import PlaceIcon from '@mui/icons-material/Place';
 import { Typography } from "@mui/material"
 
 // locally you can set this in the .env file, which is ignored by git (so you can keep your secrets secret)
@@ -31,10 +31,10 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
             setPopupInfo(location)
           }}
         >
-          <Pin />
+          <PlaceIcon style={{fill: location.name === popupInfo?.name ? "#FFF" : "red"} } />
         </Marker>
       )),
-    []
+    [popupInfo, setPopupInfo, videos]
   )
 
   return (
@@ -59,9 +59,7 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
         <FullscreenControl position="top-left" />
         <NavigationControl position="top-left" />
         <ScaleControl />
-
         {pins}
-
         {popupInfo && (
           <Popup
             anchor="top"
