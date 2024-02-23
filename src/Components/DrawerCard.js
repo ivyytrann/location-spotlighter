@@ -8,6 +8,7 @@ import { useMap } from "react-map-gl"
 import VideoFrame from "./VideoFrame"
 
 
+
 export default function DrawerCard({ location, setPopupInfo }) {
   const { denmarkMap } = useMap()
   
@@ -30,8 +31,8 @@ export default function DrawerCard({ location, setPopupInfo }) {
   )
 
   return (
-    <Box pt={2} pb={2}>
-      <Card sx={{ maxWidth: 345 }}>
+    <Box pt={2} pb={1}>
+      <Card sx={{ maxWidth: 345, padding:"10px" }} style={{backgroundColor: "#EFEEE7"}}>
         <VideoFrame src={location.youtube_url} />
         <CardContent>{cardText}</CardContent>
         <Button size="small" align="center" onClick={onClick} >
