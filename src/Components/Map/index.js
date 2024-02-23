@@ -11,8 +11,6 @@ import Map, {
 import PlaceIcon from '@mui/icons-material/Place';
 import { Typography } from "@mui/material"
 
-// locally you can set this in the .env file, which is ignored by git (so you can keep your secrets secret)
-// on vercel you can set these in the environment variables
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN
 
 export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
@@ -25,8 +23,6 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
           latitude={location.geolocation.lat}
           anchor="bottom"
           onClick={(e) => {
-            // If we let the click event propagates to the map, it will immediately close the popup
-            // with `closeOnClick: true`
             e.originalEvent.stopPropagation()
             setPopupInfo(location)
           }}

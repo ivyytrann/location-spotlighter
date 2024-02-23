@@ -8,14 +8,25 @@ import { MapProvider } from "react-map-gl"
 import Alert from '@mui/material/Alert';
 import { Typography } from "@mui/material"
 import PlaceIcon from '@mui/icons-material/Place';
-
-
+import { useRef, useEffect } from "react"
+import { createRef } from "react"
 
 
 const drawerWidth = 400
 
 export default function LocationSpotlighter() {
   const [popupInfo, setPopupInfo] = useState(null)
+  const locationRef = useRef(videos.map(()=> createRef()))
+
+  useEffect(() => {
+    if (popupInfo && locationRef.current) {
+      const activeSiteId = videos.findIndex((location) => location.name === popupInfo.name)
+      locationRef.current[activeSiteId].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [popupInfo]);
 
   return (
     <MapProvider>
@@ -41,10 +52,11 @@ export default function LocationSpotlighter() {
         <Alert icon={<PlaceIcon fontSize="inherit" />}>
           <Typography heading="h1">Locations</Typography>
         </Alert>
-        
         <div align="center">
           {videos.map((location, index) => (
-            <DrawerCard key={index} location={location} setPopupInfo={setPopupInfo}/>
+            <div key={index} ref={ el => locationRef.current[index] = el}>
+              <DrawerCard location={location} setPopupInfo={setPopupInfo}/>
+            </div>
           ))}
         </div>
       </Drawer>

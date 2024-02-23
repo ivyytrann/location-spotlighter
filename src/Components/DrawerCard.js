@@ -7,9 +7,7 @@ import { Box } from "@mui/material"
 import { useMap } from "react-map-gl"
 import VideoFrame from "./VideoFrame"
 
-
-
-export default function DrawerCard({ location, setPopupInfo }) {
+export default function DrawerCard({ location, setPopupInfo}) {
   const { denmarkMap } = useMap()
   
   const onClick = () => {
