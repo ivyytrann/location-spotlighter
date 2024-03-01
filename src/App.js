@@ -50,11 +50,6 @@ export default function LocationSpotlighter() {
         variant="permanent"
         anchor="right"
       >
-        <Alert icon={<PlaceIcon fontSize="inherit" />}>
-          <Typography heading="h1">
-            Denmark/Kwoorabup Six Seasons Films + Podcasts
-          </Typography>
-        </Alert>
         <div align="center">
           {videos.map((location, index) => (
             <div key={index} ref={(el) => (locationRef.current[index] = el)}>
