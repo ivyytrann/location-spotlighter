@@ -10,7 +10,6 @@ import theme from "../theme"
 
 export default function DrawerCard({ location, popupInfo, setPopupInfo }) {
   const activeSite = location?.name === popupInfo?.name
-
   const { denmarkMap } = useMap()
 
   const onClick = () => {
