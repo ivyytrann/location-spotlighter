@@ -8,8 +8,9 @@ import Map, {
   ScaleControl,
   GeolocateControl,
 } from "react-map-gl"
-import PlaceIcon from '@mui/icons-material/Place';
+import PlaceIcon from "@mui/icons-material/Place"
 import { Typography } from "@mui/material"
+import theme from "../../theme"
 
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN
 
@@ -27,7 +28,16 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
             setPopupInfo(location)
           }}
         >
-          <PlaceIcon style={{fill: location.name === popupInfo?.name ? "#FFF" : "red"} } />
+          <PlaceIcon
+            fontSize="large"
+            style={{
+              fill:
+                location.name === popupInfo?.name
+                  ? "#FFF"
+                  : theme.palette.lightGreen,
+              filter: `drop-shadow(0px 0px 4px #000)`,
+            }}
+          />
         </Marker>
       )),
     [popupInfo, setPopupInfo, videos]
@@ -64,7 +74,6 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
             onClose={() => setPopupInfo(null)}
           >
             <Typography variant="h6">{popupInfo.name}</Typography>
-            <Typography variant="body">{popupInfo.description}</Typography>
           </Popup>
         )}
       </Map>
