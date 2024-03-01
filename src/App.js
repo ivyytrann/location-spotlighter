@@ -5,28 +5,29 @@ import DrawerCard from "./Components/DrawerCard"
 import GeoMap from "./Components/Map"
 import { useState } from "react"
 import { MapProvider } from "react-map-gl"
-import Alert from '@mui/material/Alert';
+import Alert from "@mui/material/Alert"
 import { Typography } from "@mui/material"
-import PlaceIcon from '@mui/icons-material/Place';
+import PlaceIcon from "@mui/icons-material/Place"
 import { useRef, useEffect } from "react"
 import { createRef } from "react"
-
 
 const drawerWidth = 400
 
 export default function LocationSpotlighter() {
   const [popupInfo, setPopupInfo] = useState(null)
-  const locationRef = useRef(videos.map(()=> createRef()))
+  const locationRef = useRef(videos.map(() => createRef()))
 
   useEffect(() => {
     if (popupInfo && locationRef.current) {
-      const activeSiteId = videos.findIndex((location) => location.name === popupInfo.name)
+      const activeSiteId = videos.findIndex(
+        (location) => location.name === popupInfo.name
+      )
       locationRef.current[activeSiteId].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+        behavior: "smooth",
+        block: "start",
+      })
     }
-  }, [popupInfo]);
+  }, [popupInfo])
 
   return (
     <MapProvider>
@@ -50,12 +51,14 @@ export default function LocationSpotlighter() {
         anchor="right"
       >
         <Alert icon={<PlaceIcon fontSize="inherit" />}>
-          <Typography heading="h1">Locations</Typography>
+          <Typography heading="h1">
+            Denmark/Kwoorabup Six Seasons Films + Podcasts
+          </Typography>
         </Alert>
         <div align="center">
           {videos.map((location, index) => (
-            <div key={index} ref={ el => locationRef.current[index] = el}>
-              <DrawerCard location={location} setPopupInfo={setPopupInfo}/>
+            <div key={index} ref={(el) => (locationRef.current[index] = el)}>
+              <DrawerCard location={location} setPopupInfo={setPopupInfo} />
             </div>
           ))}
         </div>
