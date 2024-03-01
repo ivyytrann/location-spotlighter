@@ -58,7 +58,11 @@ export default function LocationSpotlighter() {
         <div align="center">
           {videos.map((location, index) => (
             <div key={index} ref={(el) => (locationRef.current[index] = el)}>
-              <DrawerCard location={location} setPopupInfo={setPopupInfo} />
+              <DrawerCard
+                location={location}
+                popupInfo={popupInfo}
+                setPopupInfo={setPopupInfo}
+              />
             </div>
           ))}
         </div>

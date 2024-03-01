@@ -8,7 +8,8 @@ import { useMap } from "react-map-gl"
 import VideoFrame from "./VideoFrame"
 import theme from "../theme"
 
-export default function DrawerCard({ location, setPopupInfo }) {
+export default function DrawerCard({ location, popupInfo, setPopupInfo }) {
+  const activeSite = location?.name === popupInfo?.name
   const { denmarkMap } = useMap()
 
   const onClick = () => {
@@ -33,12 +34,24 @@ export default function DrawerCard({ location, setPopupInfo }) {
     <Box pt={2} pb={1}>
       <Card
         sx={{ maxWidth: 345, padding: "10px" }}
-        style={{ backgroundColor: theme.palette.cardBackground }}
+        style={{
+          backgroundColor: activeSite
+            ? theme.palette.lightGreen
+            : theme.palette.cardBackground,
+        }}
       >
         <VideoFrame src={location.youtube_url} />
         <CardContent>{cardText}</CardContent>
         <Button size="small" align="center" onClick={onClick}>
           Fly to site
+        </Button>
+        <Button
+          size="small"
+          align="center"
+          target="_blank"
+          href={`https://www.google.com/maps/dir/?api=1&destination=${location.geolocation.lat},${location.geolocation.lng}`}
+        >
+          Directions
         </Button>
       </Card>
     </Box>

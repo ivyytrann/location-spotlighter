@@ -33,8 +33,8 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
             style={{
               fill:
                 location.name === popupInfo?.name
-                  ? "#FFF"
-                  : theme.palette.lightGreen,
+                  ? theme.palette.lightGreen
+                  : theme.palette.cardBackground,
               filter: `drop-shadow(0px 0px 4px #000)`,
             }}
           />
@@ -73,7 +73,9 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
             latitude={Number(popupInfo.geolocation.lat)}
             onClose={() => setPopupInfo(null)}
           >
-            <Typography variant="h6">{popupInfo.name}</Typography>
+            <Typography gutterBottom variant="h5" component="div">
+              {popupInfo.name}
+            </Typography>
           </Popup>
         )}
       </Map>
