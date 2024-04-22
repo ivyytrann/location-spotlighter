@@ -1,0 +1,80 @@
+[
+    {
+        "podcastFileName": "Bunuru",
+        "type": "podcast",
+        "geolocation": {
+            "lat": -35.07566261410849,
+            "lng": 117.51981389280519
+        },
+        "season": "BUNURU Hottest time of year, February-March.",
+        "name": "Lowlands beach ",
+        "locationName": "Lowlands beach ",
+        "description": "Traditionally local Noongars were camped by the coast, rivers and estuaries making the most of the abundant seafood. Exploring the amazing range of geological features of the beach, Understanding the importance of Aboriginal cultural heritage.",
+        "participants": "Menang educator, Larry Blight, Geologist Professor Katy Evans from Curtin University, Mark Parre (pronounced Parry) environmentalist and 2023 Denmark Citizen of the Year"
+    },
+    {
+        "podcastFileName": "Djeran",
+        "type": "podcast",
+        "geolocation": {
+            "lat": -34.98387686389743,
+            "lng": 117.34410583835951
+        },
+        "season": "DJERAN April-May. Cooler nights, dew in the mornings, southerly breezes.",
+        "name": "Warrumbup - Weeden Hill",
+        "locationName": "Weeden Hill in Denmark town. (Menang name is Warrumbup)",
+        "description": "Cross cultural environmental studies and collaborations",
+        "participants": "Menang elder Lynette Knapp and Ursula Rodreges who collaborate in the Walking Together project at UWA Albany."
+    },
+    {
+        "podcastFileName": "Makuru",
+        "type": "podcast",
+        "geolocation": {
+            "lat": -34.82102962138639,
+            "lng": 117.40521383431837
+        },
+        "season": "MAKURU June-July. Coldest and wettest time of year",
+        "name": "The base of Mount Lindesay",
+        "locationName": "The base of Mount Lindesay",
+        "description": "Aboriginal access to country for cultural purposes. The discovery of a new species of Eucalypt tree and the campaign to save it.",
+        "participants": "Noongar elder Eliza Woods and Basil Schur from Greenskills in Denmark."
+    },
+    {
+        "podcastFileName": "Djilba",
+        "type": "podcast",
+        "geolocation": {
+            "lat": -35.03879376306755,
+            "lng": 117.16029515894422
+        },
+        "season": "DJILBA August-September. First spring, acacias start to flower, warmer, rainy and windy days.",
+        "name": "Parry Beach",
+        "locationName": "Parry Beach",
+        "description": "The study of Southern Right Whales along the south coast. (The Little White Whale Project) Menang fish traps. A collection of Menang fish and artifacts held in museums in Britain.",
+        "participants": "Katy Fannei (pronounced Fannay) from the Little White Whale Project. Menang Elder Lester Coyne who travelled to Britain to see the Menang fish in museums."
+    },
+    {
+        "podcastFileName": "Kambrang",
+        "type": "podcast",
+        "geolocation": {
+            "lat": -34.767152783252314,
+            "lng": 117.0003035080787
+        },
+        "season": "KAMBARANG October-November. Second spring. Flowering of native plants, warm days, reptiles start to awaken from hibernation, Magpies start swooping to protect their nests.",
+        "name": "Millars Basin - Mount Roe National Park",
+        "locationName": "Millars Basin on the Kent River in Mount Roe National Park. A beautiful, large waterhole.",
+        "description": "Noongar freshwater fish traps. The unique freshwater aquatic life in the rivers and streams of the south coast area. The threat of climate change to our freshwater wildlife and a project to help them survive.",
+        "participants": "Menang elder Lynette Knapp and her daughter Shandell Cummings who are both engaged in research at UWA Albany. Mark Allan and Stephen Beatty from the Harry Butler institute’s Freshwater Fish Group and Fish Health unit, at Murdoch University"
+    },
+    {
+        "podcastFileName": "Birak",
+        "type": "podcast",
+        "geolocation": {
+            "lat": -35.01682546683572,
+            "lng": 117.27013989936661
+        },
+        "season": "BIRAK December-January. The warm weather really starts to take hold. Traditional people would head to the coast to take advantage of the food resources of the ocean, estuaries and rivers.",
+        "name": "Lake Williams - William Bay National park",
+        "locationName": "Lake Williams AKA The Red Lake in William Bay National park. Picturesque lake edged with granite on one side, very red/brown water colour.",
+        "description": "Aboriginal heritage surveys carried out by the Aboriginal ranger program. The importance of peat soils in the ecosystem and the threats to them.",
+        "participants": "Noongar elder Aiden Eades, the oldest living elder in the South West. Rob Main who is a support officer with DBCA’s Aboriginal ranger program. Professor Pierre Horwitz, a limnologist who studies freshwater wetlands and their aquatic fauna."
+    }
+]

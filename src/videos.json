@@ -1,6 +1,7 @@
 [
     {
         "name": "Styx River",
+        "type": "video",
         "geolocation": {
             "lat": -34.86224430908208,
             "lng": 117.09423773403911
@@ -10,6 +11,7 @@
     },
     {
         "name": "Mount Lindesay/ Peetupup-",
+        "type": "video",
         "geolocation": {
             "lat": -34.851062600753416,
             "lng": 117.27434836851486
@@ -19,6 +21,7 @@
     },
     {
         "name": "Mount Hallowell/ Kooryunderup",
+        "type": "video",
         "geolocation": {
             "lat": -35.00346271395953,
             "lng": 117.30302192179204
@@ -28,6 +31,7 @@
     },
     {
         "name": "Wilson Inlet/Marjet-",
+        "type": "video",
         "geolocation": {
             "lat": -34.96807273726644,
             "lng": 117.38926551115676
@@ -37,6 +41,7 @@
     },
     {
         "name": "Morley Beach/ Marjet- ",
+        "type": "video",
         "geolocation": {
             "lat": -34.990440495069144,
             "lng": 117.48241896818844
@@ -46,6 +51,7 @@
     },
     {
         "name": "Mount Leahy",
+        "type": "video",
         "geolocation": {
             "lat": -34.924919615569515,
             "lng": 117.35348738329455

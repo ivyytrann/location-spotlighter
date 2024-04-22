@@ -1,25 +1,26 @@
 import * as React from "react"
 import Drawer from "@mui/material/Drawer"
 import videos from "./videos.json"
-import DrawerCard from "./Components/DrawerCard"
+import podcasts from "./podcasts.json"
+import VideoCard from "./Components/Cards/VideoCard"
+import PodcastCard from "./Components/Cards/PodcastCard"
 import GeoMap from "./Components/Map"
 import { useState } from "react"
 import { MapProvider } from "react-map-gl"
-import Alert from "@mui/material/Alert"
-import { Typography } from "@mui/material"
-import PlaceIcon from "@mui/icons-material/Place"
 import { useRef, useEffect } from "react"
 import { createRef } from "react"
 
-const drawerWidth = 400
+const drawerWidth = 500
 
 export default function LocationSpotlighter() {
   const [popupInfo, setPopupInfo] = useState(null)
-  const locationRef = useRef(videos.map(() => createRef()))
+  // eslint-disable-next-line
+  const joinedLocations = [...podcasts, ...videos]
+  const locationRef = useRef(joinedLocations.map(() => createRef()))
 
   useEffect(() => {
     if (popupInfo && locationRef.current) {
-      const activeSiteId = videos.findIndex(
+      const activeSiteId = joinedLocations.findIndex(
         (location) => location.name === popupInfo.name
       )
       locationRef.current[activeSiteId].scrollIntoView({
@@ -27,7 +28,11 @@ export default function LocationSpotlighter() {
         block: "start",
       })
     }
-  }, [popupInfo])
+  }, [popupInfo, joinedLocations])
+
+  const sortedLocations = joinedLocations.sort(
+    (a, b) => b.geolocation.lng - a.geolocation.lng
+  )
 
   return (
     <MapProvider>
@@ -35,7 +40,7 @@ export default function LocationSpotlighter() {
         <GeoMap
           popupInfo={popupInfo}
           setPopupInfo={setPopupInfo}
-          videos={videos}
+          locations={joinedLocations}
         />
       </div>
       <Drawer
@@ -51,13 +56,22 @@ export default function LocationSpotlighter() {
         anchor="right"
       >
         <div align="center">
-          {videos.map((location, index) => (
+          {sortedLocations.map((location, index) => (
             <div key={index} ref={(el) => (locationRef.current[index] = el)}>
-              <DrawerCard
-                location={location}
-                popupInfo={popupInfo}
-                setPopupInfo={setPopupInfo}
-              />
+              {location.type === "podcast" && (
+                <PodcastCard
+                  location={location}
+                  popupInfo={popupInfo}
+                  setPopupInfo={setPopupInfo}
+                />
+              )}
+              {location.type === "video" && (
+                <VideoCard
+                  location={location}
+                  popupInfo={popupInfo}
+                  setPopupInfo={setPopupInfo}
+                />
+              )}
             </div>
           ))}
         </div>
