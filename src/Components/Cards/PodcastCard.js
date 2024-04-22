@@ -30,6 +30,9 @@ export default function DrawerCard({ location, popupInfo, setPopupInfo }) {
       <Typography variant="body2" color="text.secondary" gutterBottom>
         {location.description}
       </Typography>
+      <Typography variant="body1" color="text.secondary" gutterBottom>
+        Participants: {location.participants}
+      </Typography>
     </>
   )
 
