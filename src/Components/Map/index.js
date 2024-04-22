@@ -14,10 +14,10 @@ import theme from "../../theme"
 
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN
 
-export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
+export default function GeoMap({ popupInfo, setPopupInfo, locations }) {
   const pins = useMemo(
     () =>
-      videos.map((location, index) => (
+      locations.map((location, index) => (
         <Marker
           key={`marker-${index}`}
           longitude={location.geolocation.lng}
@@ -40,7 +40,7 @@ export default function GeoMap({ popupInfo, setPopupInfo, videos }) {
           />
         </Marker>
       )),
-    [popupInfo, setPopupInfo, videos]
+    [popupInfo, setPopupInfo, locations]
   )
 
   return (
