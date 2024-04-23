@@ -24,14 +24,8 @@ export default function DrawerCard({ location, popupInfo, setPopupInfo }) {
       <Typography gutterBottom variant="h5" component="div">
         {location.name}
       </Typography>
-      <Typography variant="body1" color="text.secondary" gutterBottom>
-        Season: {location.season}
-      </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom>
         {location.description}
-      </Typography>
-      <Typography variant="body1" color="text.secondary" gutterBottom>
-        Participants: {location.participants}
       </Typography>
     </>
   )
@@ -46,13 +40,17 @@ export default function DrawerCard({ location, popupInfo, setPopupInfo }) {
             : theme.palette.cardBackground,
         }}
       >
+        <img
+          src={`podcasts/${location.imageFile}`}
+          alt={location.description}
+        />
+        <CardContent>{cardText}</CardContent>
         <ReactAudioPlayer
           src={`podcasts/${location.podcastFileName}.mp3`}
           autoPlay={false}
           controls
           style={{ width: 400 }}
         />
-        <CardContent>{cardText}</CardContent>
         <Button size="small" align="center" onClick={onClick}>
           Fly to site
         </Button>
