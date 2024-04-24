@@ -17,7 +17,9 @@ const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN
 export default function GeoMap({ popupInfo, setPopupInfo, locations }) {
   const pins = useMemo(
     () =>
-      locations.map((location, index) => (
+      locations.map((location, index) => {
+        const pinColor = location.type === 'podcast' ? theme.palette.podcastCardBackground : theme.palette.cardBackground
+        return (
         <Marker
           key={`marker-${index}`}
           longitude={location.geolocation.lng}
@@ -34,12 +36,13 @@ export default function GeoMap({ popupInfo, setPopupInfo, locations }) {
               fill:
                 location.name === popupInfo?.name
                   ? theme.palette.lightGreen
-                  : theme.palette.cardBackground,
+                  : pinColor,
               filter: `drop-shadow(0px 0px 4px #000)`,
             }}
           />
         </Marker>
-      )),
+      )}
+    ),
     [popupInfo, setPopupInfo, locations]
   )
 
