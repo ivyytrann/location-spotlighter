@@ -26,6 +26,7 @@ const theme = createTheme({
     },
     lightGreen: "#8be88c",
     cardBackground: "#EFEEE7",
+    podcastCardBackground: "#c0bca1",
   },
 })
 
