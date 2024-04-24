@@ -37,7 +37,7 @@ export default function DrawerCard({ location, popupInfo, setPopupInfo }) {
         style={{
           backgroundColor: activeSite
             ? theme.palette.lightGreen
-            : theme.palette.cardBackground,
+            : theme.palette.podcastCardBackground,
         }}
       >
         <img
